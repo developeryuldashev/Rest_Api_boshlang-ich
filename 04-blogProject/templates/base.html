@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yuldashev Blog</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header>
+    <h1><a href="{% url 'home' %}"> Yuldashev Blog</a></h1>
+</header>
+    {% if user.is_authenticated %}
+        <p>Xush kelibsiz, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}">Chiqib ketish</a>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}">Saytga kirish</a> |
+            <a href="{% url 'login' %}">Ro'yxatdan o'tish</a>
+
+        </p>
+    {% endif %}
+<div>
+    {% block content %}
+    {% endblock content %}
+</div>
+<!--<footer>-->
+<!--    <h2><a href="{% url 'post_new' %}">Yangi post yozish</a></h2>-->
+<!--</footer>-->
+
+</body>
+</html>
