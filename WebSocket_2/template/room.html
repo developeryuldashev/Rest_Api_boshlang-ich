@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea id="chat-log" cols="100" rows="20"></textarea>
+<input id="chat-message" type="text" size="100">
+<input id="chat-submit" type="button" value="send">
+{{ room_name | json_script:"room-name" }}
+
+</body>
+</html>
